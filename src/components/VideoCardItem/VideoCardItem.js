@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 
-import {
-    GAME_TYPE,
-    YOUTUBE_LINK_URL,
-    YOUTUBE_THUMBNAIL_URL,
-} from "utils/constants";
+import { enums, url } from "utils";
 
 import demoLogo from "img/demo_gameCard.png";
 import "./VideoCardItem.scss";
 
-export default function VideoCardItem({ gameData }) {
-    const { videoIds, type, steamBackgroundUrl } = gameData;
+export default function VideoCardItem({
+    gameData,
+    thumbnail,
+    headerLink = false,
+}) {
+    const { videoIds, type, steamId } = gameData;
 
     const [hover, setHover] = useState(false);
     const [thumbnailIndex, setThumbnailIndex] = useState(
@@ -25,17 +25,22 @@ export default function VideoCardItem({ gameData }) {
 
     const containerClass = classNames({
         "video-card-item": true,
-        overlay: type === GAME_TYPE.DEMO,
+        overlay: type === enums.GAME_TYPE.DEMO,
+        // thumbnail: thumbnail,
+        // steam: !thumbnail,
         zoom: hover,
     });
 
-    const generateBackgroundUrl = videoIds
-        ? YOUTUBE_THUMBNAIL_URL.replace("{0}", videoIds[thumbnailIndex])
-        : steamBackgroundUrl;
+    const generateBackgroundUrl = thumbnail
+        ? url.YOUTUBE_THUMBNAIL_URL.replace(
+              "{0}",
+              videoIds[thumbnailIndex]
+          )
+        : url.STEAM_THUMBNAIL_URL.replace("{0}", steamId);
 
     const backgroundImageStyle = {
         backgroundImage:
-            type === GAME_TYPE.DEMO
+            type === enums.GAME_TYPE.DEMO
                 ? `url(${demoLogo}), url(${generateBackgroundUrl})`
                 : `url(${generateBackgroundUrl})`,
     };
@@ -44,7 +49,7 @@ export default function VideoCardItem({ gameData }) {
         return (
             <div className="youtube-link">
                 <a
-                    href={YOUTUBE_LINK_URL.replace("{0}", videoId)}
+                    href={url.YOUTUBE_LINK_URL.replace("{0}", videoId)}
                     target="_blank"
                     rel="noreferrer"
                 >
@@ -57,10 +62,10 @@ export default function VideoCardItem({ gameData }) {
     const handleMouseExit = () => {
         setHover(false);
         let videoArrLength = videoIds.length;
-        
+
         videoArrLength !== 1 &&
             setThumbnailIndex(
-                thumbnailIndex + 1 == videoArrLength ? 0 : thumbnailIndex + 1
+                thumbnailIndex + 1 === videoArrLength ? 0 : thumbnailIndex + 1
             );
     };
 

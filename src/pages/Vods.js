@@ -1,18 +1,14 @@
 import { useState } from "react";
-
-import VideoCardList from "components/VideoCardList/VideoCardList";
-import VideoTable from "components/VideoTable/VideoTable";
-import Title from "components/Title/Title";
-import Toggle from "components/Toggle/Toggle";
+import {VideoCardList, Title, Toggle} from "components";
 import { GAMES_PLAYED } from "utils/data/GamesPlayed";
 
 import "./Vods.scss";
 
 export default function Vods() {
-    const [tableLayout, setTableLayout] = useState(false);
+    const [displayThumbnails, setDisplayThumbnails] = useState(true);
 
     const handleToggle = () => {
-        setTableLayout(!tableLayout);
+        setDisplayThumbnails(!displayThumbnails);
     };
 
     const title = "Past Streams!";
@@ -22,11 +18,11 @@ export default function Vods() {
         <div className="vods">
             <Title title={title} description={description} />
             <Toggle
-                label="Toggle me"
-                defaultState={false}
+                label="Youtube Thumbnails?"
+                defaultState={displayThumbnails}
                 onToggle={handleToggle}
             />
-            { tableLayout ? <VideoTable games={GAMES_PLAYED}/> : <VideoCardList games={GAMES_PLAYED} /> }
+                <VideoCardList games={GAMES_PLAYED} thumbnailView={displayThumbnails} />
         </div>
     );
 }
