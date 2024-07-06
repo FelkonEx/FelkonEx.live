@@ -1,6 +1,11 @@
 import "./Title.scss";
 
-const Title = ({ title, description }) => {
+type TitleProps = {
+    title: string;
+    description: string;
+};
+
+const Title = ({ title, description }: TitleProps) => {
     return (
         <div className="header">
             <div className="title">{title}</div>

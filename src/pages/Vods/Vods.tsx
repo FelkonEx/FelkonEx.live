@@ -1,0 +1,31 @@
+import { useEffect, useState } from "react";
+
+import { VideoCardList, Title, Toggle } from "components";
+// import { GAMES_PLAYED } from "utils/data/GamesPlayed";
+
+import "./Vods.scss";
+
+export default function Vods() {
+    const title = "Past Streams!";
+    const description = "Missed a stream? You can check previous VODs here!";
+    const [videos, setVideos] = useState([])
+
+    useEffect(() => {
+        fetch("yt/vods")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                setVideos(data)
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    }, []);
+
+    return (
+        <div className="vods">
+            <Title title={title} description={description} />
+            {videos.length !== 0 && <VideoCardList videos={videos} />}
+        </div>
+    );
+}

@@ -12,6 +12,9 @@ const Layout = () => {
             <Link to="/vods">Vods</Link>
           </li>
           <li>
+            <Link to="/emotes">emotes</Link>
+          </li>
+          <li>
             <Link to="/clip-compilations">Clip Compilations</Link>
           </li>
         </ul>

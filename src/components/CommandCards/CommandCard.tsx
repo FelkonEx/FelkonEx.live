@@ -1,13 +1,19 @@
 import React from "react";
 import { useCollapse } from "react-collapsed";
 
-export default function CommandCard({ title, description, imageUrl }) {
+type CommandCardProps = {
+    title: string;
+    description: string;
+    imageUrl: string;
+};
+
+export default function CommandCard({ title, description, imageUrl }: CommandCardProps) {
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
     return (
         <div className="collapsible">
             <div className="header" {...getToggleProps()}>
-                {title} 
+                {title}
             </div>
             <div {...getCollapseProps()}>
                 <div className="content">
