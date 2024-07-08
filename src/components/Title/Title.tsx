@@ -7,7 +7,7 @@ type TitleProps = {
 
 const Title = ({ title, description }: TitleProps) => {
     return (
-        <div className="header">
+        <div className="title-container">
             <div className="title">{title}</div>
             {description ?? <div className="description">{description}</div>}
         </div>

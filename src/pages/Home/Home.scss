@@ -1,0 +1,57 @@
+@use "/src/styles/constants" as constants;
+@use "/src/styles/mixins" as mixins;
+
+.home-container {
+    @include mixins.screenWidthStyling;
+
+    background-color: #151127;
+    .intro-container {
+        padding: 1rem;
+        display: grid;
+
+        @media (max-width: constants.$screen-medium) {
+            grid-column: 100%;
+        }
+
+        @media (min-width: constants.$screen-medium) {
+            grid-template-columns: 33% 66%;
+        }
+
+        .intro-image {
+            grid-row-start: 1;
+            grid-row-end: span 2;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-width: 100%;
+                border: 10px solid #00a1ff;
+                box-sizing: border-box;
+                border-radius: 4rem;
+            }
+
+            @media (max-width: constants.$screen-medium) {
+                display: none;
+            }
+        }
+
+        .intro-title {
+            font-size: 4rem;
+            font-weight: bold;
+            @include mixins.centreText;
+
+            span {
+                border-bottom: 3px solid #00a1ff;
+            }
+        }
+
+        .intro-description {
+            margin: 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            @include mixins.centreText;
+        }
+    }
+}

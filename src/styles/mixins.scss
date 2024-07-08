@@ -1,0 +1,21 @@
+@use "/src/styles/constants" as constants;
+
+@mixin centreText {
+    text-align: center;
+    align-content: center;
+}
+
+@mixin screenWidthStyling {
+    @media (min-width: constants.$screen-small) {
+        max-width: constants.$screen-small;
+        min-width: constants.$screen-small;
+    }
+    @media (min-width: constants.$screen-medium) {
+        max-width: constants.$screen-medium;
+        min-width: constants.$screen-medium;
+    }
+    @media (min-width: constants.$screen-large) {
+        max-width: constants.$screen-large;
+        min-width: constants.$screen-large;
+    }
+}

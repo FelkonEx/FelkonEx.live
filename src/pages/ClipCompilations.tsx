@@ -1,30 +1,18 @@
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "state/store";
 
-import { Title, VideoCardList } from "components";
-import { data } from "utils";
+import { Title, VideoCardGrid } from "components";
 
 export default function ClipCompilations() {
+    const videos = useSelector((state: RootState) => state.youtube.compilations);
+    
     const title = "Past Streams!";
     const description = "Missed a stream? You can check previous VODs here!";
-
-    const [videos, setVideos] = useState([])
-
-    useEffect(() => {
-        fetch("yt/compilations")
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setVideos(data)
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-            });
-    }, []);
 
     return (
         <div className="vods">
             <Title title={title} description={description} />
-            {videos.length !== 0 && <VideoCardList videos={videos} />}
+            {videos.length !== 0 && <VideoCardGrid videos={videos} />}
         </div>
     );
 }

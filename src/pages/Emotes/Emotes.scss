@@ -1,7 +1,10 @@
+@use "/src/styles/constants" as constants;
+@use "/src/styles/mixins" as mixins;
+
 .emotes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    @include mixins.screenWidthStyling;
+
+    background-color: red;
 }
 
 .fadeIn {

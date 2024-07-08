@@ -1,32 +1,21 @@
 import { useEffect, useState, useInsertionEffect } from "react";
 
-import { EmoteTile } from "components";
+import { EmoteTile, Title } from "components";
 import { sevenTvApiData } from "types";
 
+import { useSelector } from "react-redux";
+import { RootState } from "state/store";
 import "./Emotes.scss";
 
 export default function Emotes() {
-    const [emotes, setEmotes] = useState([]);
     const [visibleItems, setVisibleItems] = useState<number[]>([]);
-
-    useEffect(() => {
-        fetch("7tv/emotes/all")
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setEmotes(data);
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-            });
-    }, []);
+    const sevenTvEmotes = useSelector((state: RootState) => state.sevenTv.emotes);
 
     useInsertionEffect(() => {
         const timer = setInterval(() => {
             setVisibleItems((prevItems: any) => {
                 const nextItemIndex = prevItems.length;
-                if (nextItemIndex < emotes.length) {
-                    console.log("test");
+                if (nextItemIndex < sevenTvEmotes.length) {
                     return [...prevItems, nextItemIndex];
                 }
                 clearInterval(timer); // Stop the timer when all items are visible
@@ -35,9 +24,9 @@ export default function Emotes() {
         }, 25); // Adjust the delay (in milliseconds) as needed
 
         return () => clearInterval(timer); // Cleanup on unmount
-    }, [emotes]);
+    }, [sevenTvEmotes]);
 
-    let renderEmotes = emotes.map((emote: sevenTvApiData, index: number) => {
+    let renderEmotes = sevenTvEmotes.map((emote: sevenTvApiData, index: number) => {
         return (
             <div
                 className={`fadeIn ${
@@ -49,5 +38,9 @@ export default function Emotes() {
         );
     });
 
-    return <div className="emotes">{emotes.length !== 0 && renderEmotes}</div>;
+    return <div className="emotes">
+        <Title title="Twitch Emotes" description="YEP" />
+        {sevenTvEmotes.length !== 0 && renderEmotes}
+        {/* //emoteGrid component? */}
+        </div>;
 }
