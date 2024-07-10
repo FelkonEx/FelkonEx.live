@@ -5,6 +5,7 @@ import VideoCardGrid from "./VideoCardGrid/VideoCardGrid";
 import EmoteTile from "./EmoteTile/EmoteTile";
 import Header from "./Header/Header";
 import BackgroundVideo from "./BackgroundVideo/BackgroundVideo";
+import CommandExample from "./CommandExample/CommandExample";
 
 export {
     Title,
@@ -14,4 +15,5 @@ export {
     EmoteTile,
     Header,
     BackgroundVideo,
+    CommandExample
 };

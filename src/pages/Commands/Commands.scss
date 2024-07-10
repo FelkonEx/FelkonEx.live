@@ -1,0 +1,7 @@
+@use "/src/styles/mixins" as mixins;
+
+.commands-container {
+    background-color: grey;
+    @include mixins.containerPadding;
+    @include mixins.screenWidthStyling;
+}

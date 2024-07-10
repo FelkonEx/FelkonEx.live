@@ -1,0 +1,62 @@
+$lineSizeMultiply: 1;
+
+.command-example-container {
+    background-color: rgb(223, 15, 15);
+    border-radius: 1rem;
+
+    padding: 0.5rem;
+    margin: 1rem;
+    * {
+        // border: 1px solid green;
+    }
+
+    .command-heading {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .command-data {
+        .command-description {
+            padding-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .command-messages-container {
+            background-color: #18181b;
+            border-radius: 1rem;
+
+            display: flex;
+            flex-direction: row;
+
+            .messages-container {
+                width: 75%;
+                padding: 1rem;
+                .user-container {
+                    align-items: center;
+                    font-size: 1rem;
+
+                    .user-badges {
+                        height: 1rem;
+                        padding-right: 0.25rem;
+                    }
+
+                    .user-name {
+                        font-weight: bold;
+                        padding-right: 0.25rem;
+
+                        &.user {
+                            color: #0dd925;
+                        }
+
+                        &.bot {
+                            color: #2589f5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copy-link {
+        align-self: center;
+    }
+}

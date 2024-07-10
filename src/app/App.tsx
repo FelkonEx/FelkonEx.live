@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppDispatch } from "state/store";
 import actions from "state";
 
-import { Home, Vods, ClipCompilations, Emotes } from "pages";
+import { Home, Vods, ClipCompilations, Emotes, Commands } from "pages";
 import { BackgroundVideo, Header } from "components";
 
 import "./App.scss";
@@ -17,6 +17,7 @@ export default function App() {
         dispatch(actions.fetchYoutubeVodsAsync());
         dispatch(actions.fetchYoutubeCompilationsAsync());
         dispatch(actions.fetchSevenTvEmotesAsync());
+        dispatch(actions.fetchTwitchEmotesASync());
     }, []);
 
     return (
@@ -31,6 +32,7 @@ export default function App() {
                             path="clip-compilations"
                             element={<ClipCompilations />}
                         />
+                        <Route path="commands" element={<Commands />} />
                         <Route path="*" element={<Home />} />
                     </Route>
                 </Routes>
