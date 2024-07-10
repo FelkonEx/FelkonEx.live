@@ -17,12 +17,12 @@ const twitchSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchTwitchEmotesASync.pending, () => {
-                console.log("pending");
+                console.log("Pending - Twitch Emotes");
             })
             .addCase(
                 fetchTwitchEmotesASync.fulfilled,
                 (state, action: PayloadAction<Array<twitchApiEmoteData>>) => {
-                    console.log("Fetched " + action.payload.length + " VOD(s)");
+                    console.log("Fetched " + action.payload.length + " Twitch Emote(s)");
                     state.emotes = action.payload;
                 }
             );

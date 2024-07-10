@@ -20,7 +20,7 @@ const youtubeSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchYoutubeVodsAsync.pending, () => {
-                console.log("pending");
+                console.log("Pending - Youtube VODs");
             })
             .addCase(
                 fetchYoutubeVodsAsync.fulfilled,
@@ -32,7 +32,7 @@ const youtubeSlice = createSlice({
 
         builder
             .addCase(fetchYoutubeCompilationsAsync.pending, () => {
-                console.log("pending");
+                console.log("Pending - Youtube Compilations");
             })
             .addCase(
                 fetchYoutubeCompilationsAsync.fulfilled,

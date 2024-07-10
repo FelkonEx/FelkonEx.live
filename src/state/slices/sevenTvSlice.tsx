@@ -18,12 +18,12 @@ const sevenTvSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchSevenTvEmotesAsync.pending, () => {
-                console.log("pending");
+                console.log("Pending - SevenTv Emotes");
             })
             .addCase(
                 fetchSevenTvEmotesAsync.fulfilled,
                 (state, action: PayloadAction<Array<sevenTvApiEmoteData>>) => {
-                    console.log("Fetched " + action.payload.length + " VOD(s)");
+                    console.log("Fetched " + action.payload.length + " SevenTv Emote(s)");
                     state.emotes = action.payload;
                 }
             );

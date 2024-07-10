@@ -1,7 +1,7 @@
 export const sevenTvApi = {
     fetchEmotes: async () => {
         try {
-            const response: Response = await fetch("7tv/emotes/all");
+            const response: Response = await fetch("7tv/emotes");
             if (!response.ok) {
                 throw new Error("test");
             }

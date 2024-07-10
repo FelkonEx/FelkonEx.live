@@ -5,10 +5,10 @@ export type youtubeApiVideoData = {
 };
 
 export type sevenTvApiEmoteData = {
-    name?: string;
-    username?: string;
-    url?: string;
-    fileInfo?: sevenTvFileInfo;
+    name: string;
+    username: string;
+    url: string;
+    fileInfo: sevenTvFileInfo;
 };
 
 export type sevenTvFileInfo = {
@@ -20,8 +20,8 @@ export type sevenTvFileInfo = {
 };
 
 export type twitchApiEmoteData = {
-    name?: string;
-    image?: string;
-    emoteType?: string;
-    format?: string;
+    name: string;
+    imageUrl: string;
+    emoteType: string;
+    format: string;
 };
