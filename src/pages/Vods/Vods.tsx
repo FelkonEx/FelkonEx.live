@@ -8,8 +8,9 @@ export default function Vods() {
     const title = "Past Streams!";
     const description = "Missed a stream? You can check previous VODs here!";
     const videos = useSelector((state: RootState) => state.youtube.vods);
+
     return (
-        <div className="vods">
+        <div className="vods-container">
             <Title title={title} description={description} />
             {videos.length !== 0 && <VideoCardGrid videos={videos} />}
         </div>

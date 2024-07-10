@@ -3,8 +3,7 @@ import { useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { AppDispatch } from "state/store";
-import { fetchCompilationsAsync, fetchVodsAsync } from "state/youtube/youtubeSlice"
-import { fetchSevenTvEmotesAsync } from "state/sevenTv/sevenTvSlice";
+import actions from "state";
 
 import { Home, Vods, ClipCompilations, Emotes } from "pages";
 import { BackgroundVideo, Header } from "components";
@@ -15,9 +14,9 @@ export default function App() {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        dispatch(fetchVodsAsync());
-        dispatch(fetchCompilationsAsync());
-        dispatch(fetchSevenTvEmotesAsync());
+        dispatch(actions.fetchYoutubeVodsAsync());
+        dispatch(actions.fetchYoutubeCompilationsAsync());
+        dispatch(actions.fetchSevenTvEmotesAsync());
     }, []);
 
     return (

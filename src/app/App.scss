@@ -10,16 +10,17 @@ html {
     }
 
     @media (max-width: constants.$screen-medium) {
-        font-size: 16px;
+        font-size: 12px;
     }
     @media (min-width: constants.$screen-medium) {
-        font-size: 14px;
+        font-size: 12px;
     }
     @media (min-width: constants.$screen-large) {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .App {
+        min-width: 420px;
         display: flex;
         justify-content: center;
         align-items: center;
