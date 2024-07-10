@@ -1,14 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./counter/counterSlice";
-import youtubeReducer from "./youtube/youtubeSlice";
-import sevenTvReducer from "./sevenTv/sevenTvSlice";
+
+import youtubeReducer from "./slices/youtubeSlice";
+import sevenTvReducer from "./slices/sevenTvSlice";
+import twitchReducer  from "./slices/twitchSlice";
 
 export const store = configureStore({
     reducer: {
-        counter: counterReducer,
         youtube: youtubeReducer,
-        sevenTv: sevenTvReducer
-    },
+        sevenTv: sevenTvReducer,
+        twitch: twitchReducer
+    }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

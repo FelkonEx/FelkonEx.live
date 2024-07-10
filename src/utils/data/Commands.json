@@ -1,0 +1,14 @@
+[
+    {
+        "commandName": "discord",
+        "description": "Shows a link in chat to the discord",
+        "firstMessage": "!discord",
+        "secondMessage": "Discord can be found here"
+    },
+    {
+        "commandName": "discord_HTML",
+        "description": "test",
+        "firstMessage": "!discord_HTML",
+        "secondMessage": "Discord can be found here <a href=\"https://google.com\">link</a>"
+    }
+]

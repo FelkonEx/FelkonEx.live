@@ -7,5 +7,5 @@ export const VOD_STATE = {
 
 export const GAME_TYPE = {
     FULL: "FULL",
-    DEMO: "DEMO",
+    DEMO: "DEMO"
 };

@@ -10,3 +10,7 @@ declare module "*.webm" {
     const value: import("react-native").VideoSourcePropType;
     export default value;
 }
+declare module "*.bmp" {
+    const value: import("react-native").VideoSourcePropType;
+    export default value;
+}

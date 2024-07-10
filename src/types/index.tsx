@@ -1,3 +1,16 @@
-import { gameData, videoData, videoApiData, sevenTvApiData } from "./customTypes";
+//custom project types
+import { commandData } from "./customTypes";
 
-export { gameData, videoData, videoApiData, sevenTvApiData };
+// api mapped types from felkonex-live-server
+import {
+    youtubeApiVideoData,
+    sevenTvApiEmoteData,
+    twitchApiEmoteData
+} from "./apiTypes";
+
+export {
+    youtubeApiVideoData,
+    sevenTvApiEmoteData,
+    twitchApiEmoteData,
+    commandData
+};

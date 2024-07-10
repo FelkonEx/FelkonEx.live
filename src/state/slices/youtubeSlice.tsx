@@ -1,16 +1,16 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { youtubeApi } from "API/YoutubeApi";
-import { videoApiData } from "types";
+import { youtubeApiVideoData } from "types";
 
 interface YoutubeState {
-    vods: Array<videoApiData>;
-    compilations: Array<videoApiData>;
+    vods: Array<youtubeApiVideoData>;
+    compilations: Array<youtubeApiVideoData>;
 }
 
 const initialState: YoutubeState = {
     vods: [],
-    compilations: [],
+    compilations: []
 };
 
 const youtubeSlice = createSlice({
@@ -19,45 +19,45 @@ const youtubeSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchVodsAsync.pending, () => {
+            .addCase(fetchYoutubeVodsAsync.pending, () => {
                 console.log("pending");
             })
             .addCase(
-                fetchVodsAsync.fulfilled,
-                (state, action: PayloadAction<Array<videoApiData>>) => {
+                fetchYoutubeVodsAsync.fulfilled,
+                (state, action: PayloadAction<Array<youtubeApiVideoData>>) => {
                     console.log("Fetched " + action.payload.length + " VOD(s)");
                     state.vods = action.payload;
                 }
             );
 
         builder
-            .addCase(fetchCompilationsAsync.pending, () => {
+            .addCase(fetchYoutubeCompilationsAsync.pending, () => {
                 console.log("pending");
             })
             .addCase(
-                fetchCompilationsAsync.fulfilled,
-                (state, action: PayloadAction<Array<videoApiData>>) => {
+                fetchYoutubeCompilationsAsync.fulfilled,
+                (state, action: PayloadAction<Array<youtubeApiVideoData>>) => {
                     console.log(
                         "Fetched " + action.payload.length + " Compilation(s)"
                     );
                     state.compilations = action.payload;
                 }
             );
-    },
+    }
 });
 
-export const fetchVodsAsync = createAsyncThunk(
-    "counter/fetchVodsAsync",
+export const fetchYoutubeVodsAsync = createAsyncThunk(
+    "youtube/fetchYoutubeVodsAsync",
     async () => {
-        const vods: Array<videoApiData> = await youtubeApi.fetchVods();
+        const vods: Array<youtubeApiVideoData> = await youtubeApi.fetchVods();
         return vods;
     }
 );
 
-export const fetchCompilationsAsync = createAsyncThunk(
+export const fetchYoutubeCompilationsAsync = createAsyncThunk(
     "counter/fetchCompilationsAsync",
     async () => {
-        const vods: Array<videoApiData> = await youtubeApi.fetchCompilations();
+        const vods: Array<youtubeApiVideoData> = await youtubeApi.fetchCompilations();
         return vods;
     }
 );

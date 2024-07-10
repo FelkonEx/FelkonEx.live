@@ -10,7 +10,13 @@ export default function BackgroundVideo() {
                 <source src={BgVideoSecond} type="video/webm" />
                 Your browser does not support the video tag.
             </video>
-            <video autoPlay loop muted playsInline className="background-video second">
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="background-video second"
+            >
                 <source src={BgVideo} type="video/webm" />
                 Your browser does not support the video tag.
             </video>

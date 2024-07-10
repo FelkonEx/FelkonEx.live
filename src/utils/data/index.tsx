@@ -1,2 +1,2 @@
-import CLIP_COMPILATIONS from "./ClipCompilations";
-export {CLIP_COMPILATIONS};
+import COMMANDS from "./Commands";
+export { COMMANDS };

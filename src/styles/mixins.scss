@@ -5,6 +5,13 @@
     align-content: center;
 }
 
+@mixin containerPadding {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
 @mixin screenWidthStyling {
     @media (min-width: constants.$screen-small) {
         max-width: constants.$screen-small;
@@ -18,4 +25,9 @@
         max-width: constants.$screen-large;
         min-width: constants.$screen-large;
     }
+}
+
+@mixin screenHeightScrolling {
+    overflow-y: scroll;
+    max-height: 580px;
 }
