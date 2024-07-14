@@ -1,29 +1,15 @@
 @use "/src/styles/constants" as constants;
+@use "/src/styles/mixins" as mixins;
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 html {
     color: white;
     font-family: "Chakra Petch";
-    body {
-        padding: 0;
-        margin: 0;
-    }
 
-    @media (max-width: constants.$screen-medium) {
-        font-size: 12px;
-    }
-    @media (min-width: constants.$screen-medium) {
-        font-size: 12px;
-    }
-    @media (min-width: constants.$screen-large) {
-        font-size: 14px;
-    }
-
-    .App {
+    .app {
         min-width: 420px;
         display: flex;
         justify-content: center;
-        align-items: center;
         margin-top: 5rem;
     }
 }

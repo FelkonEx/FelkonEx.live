@@ -13,31 +13,31 @@ export default function Header() {
                 <Tabs className="header-tabs">
                     <NavLink
                         // style={({ isActive }) => styledIfActive(isActive)}
-                        to="/"
+                        to=""
                     >
                         About
                     </NavLink>
                     <NavLink
                         // style={({ isActive }) => styledIfActive(isActive)}
-                        to="/emotes"
+                        to="emotes"
                     >
                         Emotes
                     </NavLink>
                     <NavLink
                         // style={({ isActive }) => styledIfActive(isActive)}
-                        to="/commands"
+                        to="commands"
                     >
                         Commands
                     </NavLink>
                     <NavLink
                         // style={({ isActive }) => styledIfActive(isActive)}
-                        to="/vods"
+                        to="vods"
                     >
                         Vods
                     </NavLink>
                     <NavLink
                         // style={({ isActive }) => styledIfActive(isActive)}
-                        to="/clip-compilations"
+                        to="clip-compilations"
                     >
                         Compilations
                     </NavLink>

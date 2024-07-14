@@ -5,11 +5,10 @@
     align-content: center;
 }
 
-@mixin containerPadding {
-    padding-top: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+@mixin contentPadding {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
 }
 
 @mixin screenWidthStyling {

@@ -15,16 +15,21 @@
     text-align: center;
     padding-bottom: 1rem;
 
+    button {
+        border: none;
+        cursor: pointer;
+    }
+
     * {
         border-radius: 10px;
         padding: 0.25rem;
-        background-color: #0d0b17;
+        background-color: constants.$color-tab-not-active;
         text-decoration: none;
         font-size: 1.25rem;
         color: white;
 
         &.active {
-            background-color: #231d42;
+            background-color: constants.$color-tab-active;
         }
 
         &:hover {

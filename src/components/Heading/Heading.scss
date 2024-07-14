@@ -1,0 +1,32 @@
+.title-container {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+
+    .title {
+        font-size: 5rem;
+        padding-top: 0.5rem;
+
+        &.large {
+            padding-top: 1rem;
+        }
+
+        &.medium {
+            font-size: 4rem;
+        }
+
+        &.small {
+            font-size: 3rem;
+        }
+
+        &.x-small {
+            font-size: 2rem;
+        }
+
+        font-weight: bold;
+    }
+
+    .description {
+        font-size: 36px;
+    }
+}
