@@ -57,7 +57,8 @@ export const fetchYoutubeVodsAsync = createAsyncThunk(
 export const fetchYoutubeCompilationsAsync = createAsyncThunk(
     "counter/fetchCompilationsAsync",
     async () => {
-        const vods: Array<youtubeApiVideoData> = await youtubeApi.fetchCompilations();
+        const vods: Array<youtubeApiVideoData> =
+            await youtubeApi.fetchCompilations();
         return vods;
     }
 );

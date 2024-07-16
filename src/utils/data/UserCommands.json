@@ -1,0 +1,83 @@
+[
+    {
+        "commandName": "!first | !first <user>",
+        "description": "Shows a link in chat to the discord",
+        "examples": [
+            {
+                "firstMessage": ["!first"],
+                "secondMessage": [
+                    "<span class=\"user-name other-user\">heirthena</span>",
+                    "has been first 57 times ",
+                    "drake"
+                ]
+            },
+            {
+                "self": true,
+                "firstMessage": [
+                    "!first ",
+                    "<span class=\"user-name other-user\">@heirthena</span>"
+                ],
+                "secondMessage": [
+                    "<span class=\"user-name other-user\">heirthena</span>",
+                    "has been first 57 times ",
+                    "drake"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!followage | !followage <user>",
+        "description": "Shows how long someone has been following FelkonEx",
+        "examples": [
+            {
+                "firstMessage": ["!followage"],
+                "secondMessage": [
+                    "<span class=\"user-name other-user\">heirthena</span>",
+                    "you have been following ",
+                    "<span class=\"user-name user\">FelkonEx</span>",
+                    "for 3 Years..."
+                ]
+            },
+            {
+                "self": true,
+                "firstMessage": [
+                    "!followage ",
+                    "<span class=\"user-name random-user\">RandomUser</span>"
+                ],
+                "secondMessage": [
+                    "<span class=\"user-name random-user\">RandomUser</span>",
+                    "has been following ",
+                    "<span class=\"user-name user\">@FelkonEx</span>",
+                    "for 2 years, 9 months, 17 days, 21 hours, 32 minutes, 21 seconds"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!lurk",
+        "description": "Tell me you're lurking around",
+        "examples": [
+            {
+                "self": true,
+                "firstMessage": ["!lurk"],
+                "secondMessage": [
+                    "<span class=\"user-name user\">FelkoNEx</span>",
+                    "is out here in Lurkington "
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!quote",
+        "description": "Shows a random quote in chat",
+        "examples": [
+            {
+                "self": true,
+                "firstMessage": ["!quote"],
+                "secondMessage": [
+                    "Quote #19: \"Chat, i'm not a weeb\" (Just Chatting)"
+                ]
+            }
+        ]
+    }
+]

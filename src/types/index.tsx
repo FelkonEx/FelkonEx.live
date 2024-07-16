@@ -1,5 +1,5 @@
 //custom project types
-import { commandData } from "./customTypes";
+import { commandData, commandExmaple } from "./customTypes";
 
 // api mapped types from felkonex-live-server
 import {
@@ -12,5 +12,6 @@ export {
     youtubeApiVideoData,
     sevenTvApiEmoteData,
     twitchApiEmoteData,
-    commandData
+    commandData,
+    commandExmaple
 };

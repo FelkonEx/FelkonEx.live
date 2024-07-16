@@ -1,7 +1,11 @@
 export type commandData = {
     commandName: string;
-    type?: string;
     description: string;
-    firstMessage: string;
-    secondMessage: string | TrustedHTML; // list of TrustedHTML?
+    examples: Array<commandExmaple>;
+};
+
+export type commandExmaple = {
+    self?: boolean;
+    firstMessage: Array<TrustedHTML>;
+    secondMessage: Array<TrustedHTML>;
 };

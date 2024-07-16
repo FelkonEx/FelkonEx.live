@@ -23,7 +23,9 @@ const sevenTvSlice = createSlice({
             .addCase(
                 fetchSevenTvEmotesAsync.fulfilled,
                 (state, action: PayloadAction<Array<sevenTvApiEmoteData>>) => {
-                    console.log("Fetched " + action.payload.length + " SevenTv Emote(s)");
+                    console.log(
+                        "Fetched " + action.payload.length + " SevenTv Emote(s)"
+                    );
                     state.emotes = action.payload;
                 }
             );
@@ -33,7 +35,8 @@ const sevenTvSlice = createSlice({
 export const fetchSevenTvEmotesAsync = createAsyncThunk(
     "sevenTv/fetchSevenTvEmotesAsync",
     async () => {
-        const emotes: Array<sevenTvApiEmoteData> = await sevenTvApi.fetchEmotes();
+        const emotes: Array<sevenTvApiEmoteData> =
+            await sevenTvApi.fetchEmotes();
         return emotes;
     }
 );

@@ -2,7 +2,4 @@
 @use "/src/styles/mixins" as mixins;
 
 .vods-container {
-    background-color: orange;
-    @include mixins.containerPadding;
-    @include mixins.screenWidthStyling;
 }

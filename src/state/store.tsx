@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import youtubeReducer from "./slices/youtubeSlice";
 import sevenTvReducer from "./slices/sevenTvSlice";
-import twitchReducer  from "./slices/twitchSlice";
+import twitchReducer from "./slices/twitchSlice";
 
 export const store = configureStore({
     reducer: {

@@ -2,8 +2,7 @@
 @use "/src/styles/mixins" as mixins;
 
 .content-container {
-    box-sizing: border-box;
-
+    @include mixins.contentContainer;
     @include mixins.contentPadding;
     @include mixins.screenWidthStyling;
 }

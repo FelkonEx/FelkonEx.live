@@ -1,0 +1,126 @@
+[
+    {
+        "commandName": "!7tv",
+        "description": "Links to 7tv",
+        "examples": [
+            {
+                "firstMessage": ["!7tv"],
+                "secondMessage": [
+                    "Can't see emotes?",
+                    "<span class=\"emote bboomer\"/>",
+                    "<span class=\"emote clueless\"/>",
+                    "<span class=\"emote gigachad\"/>",
+                    "Download the 7TV extension -> ",
+                    "<a href=\"https://7tv.app/\">https://7tv.app/</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!discord",
+        "description": "Links to my discord",
+        "examples": [
+            {
+                "firstMessage": ["!discord"],
+                "secondMessage": [
+                    "Come Join the Discord ",
+                    "<span class=\"emote smadge-point-left-discord\"/>",
+                    "<a href=\"https://felkonex.live/discord\">https://felkonex.live/discord</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!donate | !support",
+        "description": "Links to StreamElements' donation page",
+        "examples": [
+            {
+                "firstMessage": ["!donate"],
+                "secondMessage": [
+                    "You wanna support me?",
+                    "<span class=\"emote gigachad\"/>",
+                    "You can do that here -> ",
+                    "<a href=\"https://felkonex.live/donate\">https://felkonex.live/donate</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!humble | !humblebundle",
+        "description": "Links to my humble bundle referral code",
+        "examples": [
+            {
+                "firstMessage": ["!humble"],
+                "secondMessage": [
+                    "I'm a Humble Partner! Anything you buy off of the Humble Store using my referral code gives me a referral bonus! -> ",
+                    "<a href=\"https://felkonex.live/humble\">https://felkonex.live/humble</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!twitter | !tw | !x",
+        "description": "Links to my Twitter / X",
+        "examples": [
+            {
+                "firstMessage": ["!twitter"],
+                "secondMessage": [
+                    "Ratio me, I dare you -> ",
+                    "<a href=\"https://felkonex.live/twitter\">https://felkonex.live/twitter</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!url | !website",
+        "description": "Links to my website",
+        "examples": [
+            {
+                "firstMessage": ["!website"],
+                "secondMessage": [
+                    "Check out my site -> ",
+                    "<a href=\"https://felkonex.live\">https://felkonex.live</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!youtube | !yt",
+        "description": "Links to my Youtube channel",
+        "examples": [
+            {
+                "firstMessage": ["!website"],
+                "secondMessage": [
+                    "Check out my site -> ",
+                    "<a href=\"https://felkonex.live/youtube\">https://felkonex.live/youtube</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!newvideo",
+        "description": "Links my newest youtube video",
+        "examples": [
+            {
+                "firstMessage": ["!newvideo"],
+                "secondMessage": [
+                    "Newest Clip Compilation: I DON'T look like him... // Best of FelkonEx - November & December 2022 -> ",
+                    "<a href=\"https://youtu.be/Ka36hZH0ipk\">https://youtu.be/Ka36hZH0ipk</a>"
+                ]
+            }
+        ]
+    },
+    {
+        "commandName": "!vod",
+        "description": "Links my newest youtube VOD",
+        "examples": [
+            {
+                "firstMessage": ["!vod"],
+                "secondMessage": [
+                    "Newest VOD: FelkonEx plays FAITH [Chapter 2] -> ",
+                    "<a href=\"https://youtu.be/ZPmtSS5B1jc\">https://youtu.be/ZPmtSS5B1jc</a>"
+                ]
+            }
+        ]
+    }
+]

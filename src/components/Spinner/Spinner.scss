@@ -1,0 +1,25 @@
+.spinner {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    img {
+        align-self: center;
+        max-width: 10rem;
+        max-height: 10rem;
+        animation: rotating 1s linear infinite;
+        border-radius: 2.5rem;
+    }
+    div {
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

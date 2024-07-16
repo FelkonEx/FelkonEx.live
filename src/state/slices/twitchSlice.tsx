@@ -22,7 +22,9 @@ const twitchSlice = createSlice({
             .addCase(
                 fetchTwitchEmotesASync.fulfilled,
                 (state, action: PayloadAction<Array<twitchApiEmoteData>>) => {
-                    console.log("Fetched " + action.payload.length + " Twitch Emote(s)");
+                    console.log(
+                        "Fetched " + action.payload.length + " Twitch Emote(s)"
+                    );
                     state.emotes = action.payload;
                 }
             );

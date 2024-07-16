@@ -26,6 +26,19 @@
     }
 }
 
+@mixin contentContainer {
+    background-color: constants.$color-style-one;
+    box-sizing: border-box;
+    border-radius: 3rem;
+}
+
+@mixin contentFirstLayer {
+    background-color: constants.$color-style-two;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
 @mixin screenHeightScrolling {
     overflow-y: scroll;
     max-height: 580px;

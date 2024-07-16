@@ -1,12 +1,14 @@
 // import {Counter} from "components";
-import felkonImg from "img/felkon7.png";
+import { Content } from "components";
 import "./Home.scss";
 
 const Home = () => {
     return (
-        <div className="home-container">
-            WIP
-        </div>
+        <Content
+            className="home-container"
+            title="Hi, I'm Felkon(Ex)!"
+            description="Gaming BTW"
+        ></Content>
     );
 };
 

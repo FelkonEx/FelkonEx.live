@@ -1,2 +1,2 @@
-import COMMANDS from "./Commands";
-export { COMMANDS };
+import { USER_COMMANDS, LINK_COMMANDS, MOD_COMMANDS } from "./Commands";
+export { USER_COMMANDS, LINK_COMMANDS, MOD_COMMANDS };

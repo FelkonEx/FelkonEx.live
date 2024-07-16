@@ -15,31 +15,55 @@
     text-align: center;
     padding-bottom: 1rem;
 
-    button {
-        border: none;
-        cursor: pointer;
-    }
-
-    * {
-        border-radius: 10px;
-        padding: 0.25rem;
-        background-color: constants.$color-tab-not-active;
+    a {
+        position: relative;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        background: constants.$color-tab;
         text-decoration: none;
         font-size: 1.25rem;
-        color: white;
+        color: constants.$color-text;
+        z-index: 0;
 
         &.active {
-            background-color: constants.$color-tab-active;
+            background: constants.$color-tab-active;
+            font-weight: bold;
+            transform: 150ms ease-in-out;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                border-radius: inherit;
+                width: calc(100% - 2px);
+                height: calc(100% - 2px);
+                top: 0;
+                left: 0;
+                border: solid 2px rgba(0, 161, 255, 0.5);
+            }
         }
 
-        &:hover {
-            &:not(.active) {
+        &:not(.active) {
+            &::after {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
                 background: linear-gradient(
-                    90deg,
-                    rgba(13, 11, 23, 1) 0%,
-                    rgba(35, 29, 66, 1) 100%
+                    to left,
+                    constants.$color-tab 0%,
+                    constants.$color-style-two 100%
                 );
-                transition: opacity 1s;
+                border-radius: inherit;
+                z-index: -1;
+                width: 0%;
+            }
+
+            &:hover::after {
+                width: 100%;
+                transition: 150ms ease-in-out;
             }
         }
     }
