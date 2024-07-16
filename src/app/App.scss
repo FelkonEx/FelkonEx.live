@@ -5,6 +5,9 @@
 html {
     color: constants.$color-text;
     font-family: "Chakra Petch";
+    overflow-x: hidden;
+
+    // hack to make scrollbar not change layout
 
     .app {
         min-width: 420px;

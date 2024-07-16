@@ -2,15 +2,12 @@
 @use "/src/styles/mixins" as mixins;
 
 .emotes-container {
-    @include mixins.containerPadding;
-    @include mixins.screenWidthStyling;
-
-    background-color: rgba(4, 105, 0, 0.555);
-
+    .emote-content {
+        @include mixins.contentFirstLayer;
+    }
     .emotes-grid {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
 }
-

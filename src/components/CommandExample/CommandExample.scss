@@ -1,43 +1,76 @@
-$lineSizeMultiply: 1;
+@use "/src/styles/constants" as constants;
+@use "/src/styles/mixins" as mixins;
 
 .command-example-container {
-    background-color: rgb(223, 15, 15);
-    border-radius: 1rem;
-
-    padding: 1rem;
-    margin-bottom: 1rem;
+    @include mixins.contentFirstLayer;
 
     * {
         // border: 1px solid green;
     }
 
     .command-heading {
-        font-weight: bold;
-        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        .command-heading-name {
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding-right: 1rem;
+        }
     }
 
     .command-data {
         .command-description {
-            padding-bottom: 0.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
             font-size: 1rem;
         }
         .command-messages-container {
-            background-color: #18181b;
+            background-color: constants.$color-command-message;
             border-radius: 1rem;
+            margin-top: 1rem;
+
+            &:not(:last-of-type) {
+                margin-bottom: 1rem;
+            }
 
             display: flex;
             flex-direction: row;
-
             .messages-container {
-                width: 75%;
                 padding: 1rem;
                 .user-container {
-                    align-items: center;
                     font-size: 1rem;
+                    a {
+                        text-decoration: none;
+                        color: #4286e3;
+                    }
+                    .emote {
+                        display: inline-block;
+                        width: 1.25rem;
+                        height: 1.25rem;
+                        margin-right: 0.25rem;
+                        margin-left: 0.25rem;
+                        background-size: contain !important;
+                        background-repeat: no-repeat;
+
+                        &.bboomer {
+                            background: url("https://cdn.7tv.app/emote/60ba5e80671673093a6274e1/4x.avif");
+                        }
+                        &.clueless {
+                            background: url("https://cdn.7tv.app/emote/641eb6ce131be9db5329b5ab/4x.avif");
+                        }
+                        &.gigachad {
+                            background: url("https://cdn.7tv.app/emote/60ae958e229664e8667aea38/4x.avif");
+                        }
+                        &.smadge-point-left-discord {
+                            width: calc(1.25rem * 2) !important;
+                            background: url("https://cdn.7tv.app/emote/62212130b825598c205c9df8/4x.avif");
+                        }
+                    }
 
                     .user-badges {
                         height: 1rem;
                         padding-right: 0.25rem;
+                        pointer-events: none;
                     }
 
                     .user-name {
@@ -46,6 +79,13 @@ $lineSizeMultiply: 1;
 
                         &.user {
                             color: #0dd925;
+                        }
+
+                        &.other-user {
+                            color: #ffbbca;
+                        }
+                        &.random-user {
+                            color: #2b8ae5;
                         }
 
                         &.bot {

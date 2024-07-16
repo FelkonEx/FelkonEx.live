@@ -28,7 +28,7 @@ export default function Title({
     return (
         <div className="title-container">
             <div className={titleClassName}>{title}</div>
-            {description ?? <div className="description">{description}</div>}
+            {description && <div className="description">{description}</div>}
         </div>
     );
 }

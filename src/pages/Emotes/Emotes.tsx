@@ -1,67 +1,97 @@
-import { useEffect, useState, useInsertionEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-
-import { EmoteTile, Title } from "components";
-
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+
+import { Content, EmoteTile, Heading, Spinner, Tabs } from "components";
 import { RootState } from "state/store";
-import "./Emotes.scss";
-import Tabs from "components/Tabs/Tabs";
 import { sevenTvApiEmoteData, twitchApiEmoteData } from "types";
+
+import "./Emotes.scss";
+import classNames from "classnames";
 
 export default function Emotes() {
     const location = useLocation();
-
     const sevenTvEmotes = useSelector(
         (state: RootState) => state.sevenTv.emotes
     );
     const twitchEmotes = useSelector((state: RootState) => state.twitch.emotes);
 
-    // const [visibleItems, setVisibleItems] = useState<number[]>([]);
-    // useInsertionEffect(() => {
-    //     const timer = setInterval(() => {
-    //         setVisibleItems((prevItems: any) => {
-    //             const nextItemIndex = prevItems.length;
-    //             if (nextItemIndex < sevenTvEmotes.length) {
-    //                 return [...prevItems, nextItemIndex];
-    //             }
-    //             clearInterval(timer); // Stop the timer when all items are visible
-    //             return prevItems;
-    //         });
-    //     }, 25); // Adjust the delay (in milliseconds) as needed
+    const [title, setTitle] = useState(
+        location.hash === "#7tv" ? "7tv" : "Twitch"
+    );
 
-    //     return () => clearInterval(timer); // Cleanup on unmount
-    // }, [sevenTvEmotes]);
+    useEffect(() => {
+        setTitle(location.hash === "#7tv" ? "7tv" : "Twitch");
+    }, [location]);
 
+    const filterEmotes = (emotes: twitchApiEmoteData[], filter?: string) =>
+        emotes
+            .filter((emote) => filter === null || emote.emoteType === filter)
+            .map((emote) => (
+                <EmoteTile
+                    key={emote.name}
+                    name={emote.name}
+                    imageUrl={emote.imageUrl}
+                />
+            ));
 
-    const renderTwitchEmotes = (filter?: string) =>
-        twitchEmotes.map((emote: twitchApiEmoteData) => {
-            return <EmoteTile name={emote.name} imageUrl={emote.imageUrl} />;
-        });
+    const renderTwitchEmotes = () => (
+        <>
+            <Heading title="Follower" small />
+            <div className="emotes-grid">
+                {filterEmotes(twitchEmotes, "follower")}
+            </div>
+            <Heading title="Subscriber" small />
+            <div className="emotes-grid">
+                {filterEmotes(twitchEmotes, "subscriptions")}
+            </div>
+        </>
+    );
 
-    const renderSevenTvEmotes = (filter?: string) =>
-        sevenTvEmotes.map((emote: sevenTvApiEmoteData) => {
-            return <EmoteTile name={emote.name} imageUrl={emote.url} />;
-        });
+    const renderSevenTvEmotes = () => (
+        <div className="emotes-grid">
+            {sevenTvEmotes.map((emote: sevenTvApiEmoteData) => (
+                <EmoteTile
+                    key={emote.name}
+                    name={emote.name}
+                    imageUrl={emote.url}
+                />
+            ))}
+        </div>
+    );
 
-    const renderEmotes = (filter: string) => {
-        return location.hash == "#7tv"
-            ? sevenTvEmotes.length && renderSevenTvEmotes()
-            : twitchEmotes.length && renderTwitchEmotes();
-    };
+    const setTwitchActiveClass = classNames(
+        location.hash !== "#7tv" && "active"
+    );
+    const set7tvActiveClass = classNames(location.hash === "#7tv" && "active");
 
     return (
-        <div className="emotes-container">
-            <Title title="Twitch Emotes" description="YEP" />
+        <Content
+            className="emotes-container"
+            title={`${title} Emotes`}
+            description="Click on an emote to copy it!"
+        >
             <Tabs>
-                <NavLink to="">Twitch</NavLink>
-                <NavLink to="#7tv">7tv</NavLink>
+                <a className={setTwitchActiveClass} href="#twitch">
+                    Twitch
+                </a>
+                <a className={set7tvActiveClass} href="#7tv">
+                    7tv
+                </a>
             </Tabs>
-            <div className="emotes-grid">
-                {location.hash == "#7tv"
-                    ? renderSevenTvEmotes()
-                    : renderTwitchEmotes()}
+            <div className="emote-content">
+                {location.hash === "#7tv" ? (
+                    sevenTvEmotes.length ? (
+                        renderSevenTvEmotes()
+                    ) : (
+                        <Spinner />
+                    )
+                ) : twitchEmotes.length ? (
+                    renderTwitchEmotes()
+                ) : (
+                    <Spinner />
+                )}
             </div>
-        </div>
+        </Content>
     );
 }

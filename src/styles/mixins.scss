@@ -6,9 +6,9 @@
 }
 
 @mixin contentPadding {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
 }
 
 @mixin screenWidthStyling {
@@ -23,6 +23,10 @@
     @media (min-width: constants.$screen-large) {
         max-width: constants.$screen-large;
         min-width: constants.$screen-large;
+    }
+    @media (min-width: constants.$screen-extra-large) {
+        max-width: constants.$screen-extra-large;
+        min-width: constants.$screen-extra-large;
     }
 }
 

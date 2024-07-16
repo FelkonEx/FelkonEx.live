@@ -1,52 +1,41 @@
 // import VideoCardItem from "components/VideoCardGridItem/VideoCardItem";
 
-import { videoApiData } from "types";
-import { useInsertionEffect, useState } from "react";
+// import { useInsertionEffect, useState } from "react";
 
-import "./VideoCardGrid.scss";
+import { youtubeApiVideoData } from "types";
 import { VideoCardGridItem } from "components";
 
+import "./VideoCardGrid.scss";
+
 type VideoCardGridProps = {
-    videos: videoApiData[];
+    videos: youtubeApiVideoData[];
 };
 
 export default function VideoCardGrid({ videos }: VideoCardGridProps) {
-    const [visibleItems, setVisibleItems] = useState<number[]>([]);
+    // const [visibleItems, setVisibleItems] = useState<Array<number>>([]);
 
-    useInsertionEffect(() => {
-        const timer = setInterval(() => {
-            setVisibleItems((prevItems: any) => {
-                const nextItemIndex = prevItems.length;
-                if (nextItemIndex < videos.length) {
-                    return [...prevItems, nextItemIndex];
-                }
-                clearInterval(timer); // Stop the timer when all items are visible
-                return prevItems;
-            });
-        }, 50); // Adjust the delay (in milliseconds) as needed
+    // useInsertionEffect(() => {
+    //     const timer = setInterval(() => {
+    //         setVisibleItems((prevItems: any) => {
+    //             const nextItemIndex = prevItems.length;
+    //             if (nextItemIndex < videos.length) {
+    //                 return [...prevItems, nextItemIndex];
+    //             }
+    //             clearInterval(timer); // Stop the timer when all items are visible
+    //             return prevItems;
+    //         });
+    //     }, 50); // Adjust the delay (in milliseconds) as needed
 
-        return () => clearInterval(timer); // Cleanup on unmount
-    }, [videos]);
-
-    // const regexPlays = /FelkonEx Plays/i;
-    // const regexNextFest = /\(Steam Next Fest\)/i;
-
-    // const properTitle = (title: string) =>
-    //     title.replace(regexPlays, "").replace(regexNextFest, "");
+    //     return () => clearInterval(timer); // Cleanup on unmount
+    // }, [videos]);
 
     let cardGameList = videos.map(function (
-        video: videoApiData,
+        video: youtubeApiVideoData,
         index: number
     ) {
         return (
             <div className="video-card-grid-item">
-                    <div
-                        className={`fadeIn ${
-                            visibleItems.includes(index) ? "visible" : ""
-                        }`}
-                    >
-                    <VideoCardGridItem videos={video} />
-                </div>
+                <VideoCardGridItem videos={video} />
             </div>
         );
     });
