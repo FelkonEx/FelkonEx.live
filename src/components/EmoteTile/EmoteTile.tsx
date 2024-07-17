@@ -18,12 +18,21 @@ type EmoteTileProps = {
 
 const EmoteTile = ({ name, imageUrl, scrollPosition }: EmoteTileProps) => {
     const handleEmoteClick = () => {
-        navigator.clipboard && navigator.clipboard.writeText(name || "");
+        copyToClipboard(name);
         setCopied(true);
         setTimeout(() => {
             setCopied(false); // Reset the class name after 2 seconds
         }, 1000);
     };
+
+    async function copyToClipboard(text: string) {
+        try {
+            await navigator.clipboard.writeText(text); // needs HTTPS
+            console.log("Text copied to clipboard successfully!");
+        } catch (error) {
+            console.error("Error copying text to clipboard:", error);
+        }
+    }
 
     const [copied, setCopied] = useState(false);
 
@@ -31,9 +40,6 @@ const EmoteTile = ({ name, imageUrl, scrollPosition }: EmoteTileProps) => {
 
     return (
         <div onClick={handleEmoteClick} className={emoteCopyClassNames}>
-            {/* <div className={emoteCopyClassNames}>
-                <span>Copied</span>
-            </div> */}
             <div className="emote-image">
                 <LazyLoadImage
                     className="emote-lazy-load"
@@ -41,8 +47,6 @@ const EmoteTile = ({ name, imageUrl, scrollPosition }: EmoteTileProps) => {
                     effect="blur"
                     scrollPosition={scrollPosition}
                 />
-
-                {/* <img src={imageUrl} alt={name} draggable="false" /> */}
             </div>
             <div className="emote-text">{name}</div>
         </div>

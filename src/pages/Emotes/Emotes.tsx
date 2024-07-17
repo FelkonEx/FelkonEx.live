@@ -50,6 +50,8 @@ export default function Emotes() {
 
     const renderSevenTvEmotes = () => (
         <div className="emotes-grid">
+            <Heading title="Free 7TV emotes!" small />
+
             {sevenTvEmotes.map((emote: sevenTvApiEmoteData) => (
                 <EmoteTile
                     key={emote.name}
@@ -60,37 +62,17 @@ export default function Emotes() {
         </div>
     );
 
-    const setTwitchActiveClass = classNames(
-        location.hash !== "#7tv" && "active"
-    );
-    const set7tvActiveClass = classNames(location.hash === "#7tv" && "active");
-
     return (
         <Content
             className="emotes-container"
             title={`${title} Emotes`}
             description="Click on an emote to copy it!"
         >
-            <Tabs>
-                <a className={setTwitchActiveClass} href="#twitch">
-                    Twitch
-                </a>
-                <a className={set7tvActiveClass} href="#7tv">
-                    7tv
-                </a>
-            </Tabs>
             <div className="emote-content">
-                {location.hash === "#7tv" ? (
-                    sevenTvEmotes.length ? (
-                        renderSevenTvEmotes()
-                    ) : (
-                        <Spinner />
-                    )
-                ) : twitchEmotes.length ? (
-                    renderTwitchEmotes()
-                ) : (
-                    <Spinner />
-                )}
+                {(location.hash === "#twitch" || location.hash === "") &&
+                    renderTwitchEmotes()}
+                {(location.hash === "#7tv" || location.hash === "") &&
+                    renderSevenTvEmotes()}
             </div>
         </Content>
     );

@@ -1,0 +1,23 @@
+@use "/src/styles/constants" as constants;
+@use "/src/styles/mixins" as mixins;
+
+.video-card-grid {
+    background-color: red;
+    display: grid;
+
+    @media (max-width: constants.$screen-small) {
+        grid-template-columns: repeat(1, 100%);
+    }
+    @media (min-width: constants.$screen-small) {
+        grid-template-columns: repeat(1, 100%);
+    }
+    @media (min-width: constants.$screen-medium) {
+        grid-template-columns: repeat(2, calc(100% / 2));
+    }
+    @media (min-width: constants.$screen-large) {
+        grid-template-columns: repeat(2, calc(100% / 2));
+    }
+    @media (min-width: constants.$screen-extra-large) {
+        grid-template-columns: repeat(3, calc(100% / 3));
+    }
+}

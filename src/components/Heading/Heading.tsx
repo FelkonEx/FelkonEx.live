@@ -25,6 +25,7 @@ export default function Title({
         small && "small",
         extraSmall && "x-small"
     );
+
     return (
         <div className="title-container">
             <div className={titleClassName}>{title}</div>

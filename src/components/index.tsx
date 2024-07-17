@@ -1,7 +1,6 @@
 import Heading from "./Heading/Heading";
-import Toggle from "./Toggle/Toggle";
-import VideoCardGridItem from "./VideoCardGridItem/VideoCardGridItem";
-import VideoCardGrid from "./VideoCardGrid/VideoCardGrid";
+import VideoCardItem from "./VideoCard/VideoCardItem/VideoCardItem";
+import VideoCardGrid from "./VideoCard/VideoCardGrid/VideoCardGrid";
 import EmoteTile from "./EmoteTile/EmoteTile";
 import Header from "./Header/Header";
 import BackgroundVideo from "./BackgroundVideo/BackgroundVideo";
@@ -13,8 +12,7 @@ import Spinner from "./Spinner/Spinner";
 
 export {
     Heading,
-    Toggle,
-    VideoCardGridItem,
+    VideoCardItem,
     VideoCardGrid,
     EmoteTile,
     Header,

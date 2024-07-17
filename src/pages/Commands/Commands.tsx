@@ -44,21 +44,6 @@ export default function Commands() {
             title="Commands"
             description="Click on each command for an example!"
         >
-            <Tabs>
-                <a className={setAllCommandsActiveClass} href="#">
-                    All
-                </a>
-                <a className={setUserCommandsActiveClass} href="#user">
-                    Custom
-                </a>
-                <a className={setLinkCommandsActiveClass} href="#links">
-                    Links
-                </a>
-                <a className={setModsCommandsActiveClass} href="#mods">
-                    Moderator
-                </a>
-            </Tabs>
-
             {(location.hash === "#user" || location.hash === "") &&
                 generateCommands(USER_COMMANDS, "User Commands")}
             {(location.hash === "#links" || location.hash === "") &&

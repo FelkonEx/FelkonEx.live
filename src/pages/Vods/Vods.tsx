@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { Content, Heading, Toggle, VideoCardGrid } from "components";
+import { Content, VideoCardGrid } from "components";
 import { RootState } from "state/store";
 import "./Vods.scss";
 

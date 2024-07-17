@@ -6,6 +6,7 @@
     .title {
         font-size: 5rem;
         padding-top: 0.5rem;
+        font-weight: bold;
 
         &.large {
             padding-top: 1rem;
@@ -22,8 +23,6 @@
         &.x-small {
             font-size: 2rem;
         }
-
-        font-weight: bold;
     }
 
     .description {

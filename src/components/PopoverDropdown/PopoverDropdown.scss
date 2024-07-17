@@ -1,0 +1,38 @@
+@use "/src/styles/constants" as constants;
+@use "/src/styles/mixins" as mixins;
+
+.dropdown-container {
+    * {
+    }
+
+    position: relative;
+
+    .dropdown-option {
+        @include mixins.buttonLinkStyling;
+
+        span {
+            cursor: default;
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .dropdown-options {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: constants.$screen-small) {
+            position: relative;
+        }
+        @media (min-width: constants.$screen-medium) {
+            position: absolute;
+        }
+        width: 100%;
+    }
+
+    .dropdown-option-main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
